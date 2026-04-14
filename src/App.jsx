@@ -1,4 +1,15 @@
 import {BrowserRouter,Routes ,Route} from "react-router-dom"; 
+
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Posts from "./Pages/Posts";
+import Product from "./Pages/Product";
+import SingleProduct from "./Pages/SingleProduct";
+import Error from "./Pages/Error";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 
 function App() {
@@ -7,11 +18,16 @@ function App() {
     <>
     <div className='App'>
       <BrowserRouter>
+      <Header/>
       <Routes>
-        <Route path="/" element="Home"/>
-        <Route path="about" element="About Page"/>
-        <Route path="products" element="Products Page"/>
+        <Route path="/" element={<Home />}/>
+        <Route path="about" element={<About />}/>
+        <Route path="product/:productId" element={<SingleProduct />}/>
+        <Route path="product" element={<Product/>}/>
+        <Route path="posts" element={<Posts/>}/>
+        <Route path="*" element={<Error/>}/>
       </Routes>
+      <Footer/>
       </BrowserRouter>
     </div>
      </>
