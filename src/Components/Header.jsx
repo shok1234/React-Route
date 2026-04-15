@@ -8,12 +8,14 @@ const Header = () => {
                 <div className="logo">
                     <Link to="/" className="brand">Wsp</Link>
                 </div>
-                <div className="nav nav-pills">
-                    <Link to="/" className="">Home</Link>
-                    <Link to="about" className="">About</Link>
-                    <Link to="product" className="">Products</Link>
-                    <Link to="posts" className="">Posts</Link>
-                </div>
+                <nav className="nav nav-pills">
+
+                    <NavLink to="/" 
+                    className={(naveData)=>naveData.isActive ? "nav-link active" : "nav-link"}>Home</NavLink>
+                    <NavLink to="about" className={(naveData)=>naveData.isActive ? "nav-link active" : "nav-link"}>About</NavLink>
+                    <NavLink to="product" className={(naveData)=>naveData.isActive ? "nav-link active" : "nav-link"}>Products</NavLink>
+                    <NavLink to="posts" className={(naveData)=>naveData.isActive ? "nav-link active" : "nav-link"}>Posts</NavLink>
+                </nav>
             </div>
         </div>
     </header>

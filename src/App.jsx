@@ -1,8 +1,8 @@
 import {BrowserRouter,Routes ,Route} from "react-router-dom"; 
 
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-
+//import Header from "./Components/Header";
+//import Footer from "./Components/Footer";
+import MainLayout from "./Pages/MainLayout";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Posts from "./Pages/Posts";
@@ -18,16 +18,18 @@ function App() {
     <>
     <div className='App'>
       <BrowserRouter>
-      <Header/>
+     { /*<Header/>*/}
       <Routes>
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<MainLayout/>}>
+        <Route index element={<Home />}/>
         <Route path="about" element={<About />}/>
         <Route path="product/:productId" element={<SingleProduct />}/>
         <Route path="product" element={<Product/>}/>
         <Route path="posts" element={<Posts/>}/>
         <Route path="*" element={<Error/>}/>
+        </Route>
       </Routes>
-      <Footer/>
+     {/* <Footer/>*/}
       </BrowserRouter>
     </div>
      </>
